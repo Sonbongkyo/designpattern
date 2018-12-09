@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel = "stylesheet" type = "text/css" href = "/css/style.css">
+    <title>contact</title>
+  </head>
+  <body>
+    <header>
+    <div id ='logo'>
+      Murakami
+    </div>
+    <nav id = 'menus'>
+      <ul id = 'main_menu'>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/contact">Contact</a></li>
+      </ul>
+    </nav>
+    </header>
+    <section id = 'main_img'>
+      <img src = "/images/background.jpg">
+    </section>
+    <div id = 'create'>
+    <a href = "contact/insert">INSERT </a>
+    <hr />
+    <br>
+    <br>
+    </div>
+    <table width = "100%" border = "1">
+      <tr>
+        <th>Id</th>
+        <th>title</th>
+        <th>profile</th>
+        <th>EDIT</th>
+        <th>DELETE</th>
+      </tr>
+      <% data.forEach(function (item, index) { %>
+        <tr id = 'detail'>
+          <td><%= item.id %></td>
+          <td><a href = "contact/detail/<%= item.id %>"><%= item.title %></a></td>
+          <td><%= item.profile %></td>
+          <td><a href = "contact/edit/<%= item.id %>">EDIT</a></td>
+          <td><a href = "contact/delete/<%= item.id %>">DELETE</a></td>
+        </tr>
+        <% }); %>
+      </table>
+  </body>
+</html>

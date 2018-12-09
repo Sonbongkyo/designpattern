@@ -1,0 +1,45 @@
+
+Express
+body-parser
+compression
+connect-rid
+cookie-parser
+cookie-session
+cors
+csurf
+errorhandler
+method-override
+morgan
+multer
+response-time
+serve-favicon
+serve-index
+serve-static
+session
+timeout
+vhost
+ Note: This page was generated from the body-parser README.
+body-parser
+NPM Version NPM Downloads Build Status Test Coverage
+
+Node.js body parsing middleware.
+
+ and querystring and choose the appropriate setting.
+
+inflate
+When set to true, then deflated (compressed) bodies will be ed on characters instead of bytes. The status property is set to 400 ae encoding is contained in the message as well as in the encoding property. The status property is set to 415, the type property is set to 'encoding.unsupported', and the encoding property is set to the encoding that is unsupported.
+
+Examples
+Express/Connect top-level generic
+This example demonstrates adding a generic JSON and URL-encoded parser as a top-level middleware, which will parse the bodies of all incoming requests. This is the simplest setup.
+
+var express = require('express')
+var bodyParser = require('body-parser')
+
+var app = express()
+
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }))
+
+// parse application/json
+app.use(bodyParser.json())
